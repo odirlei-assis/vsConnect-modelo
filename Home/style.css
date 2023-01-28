@@ -201,7 +201,7 @@ header nav>a {
 
 /* BANNER */
 .banner {
-    background-image: url("../Imagens/Banner-Background.png");
+    background-image: url("../img/banner-background.png");
     height: calc(100vh - 80px);
     min-height: 680px;
     background-size: cover;
@@ -331,7 +331,7 @@ header nav>a {
     height: 300px;
     background-image:
         linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
-        url("../Imagens/Maos_connect.png");
+        url("../img/maos_connect.png");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -430,7 +430,7 @@ header nav>a {
 
 /* FOOTER */
 footer {
-    background-image: url("../Imagens/Background_Footer.png");
+    background-image: url("../img/background_footer.png");
     background-size: cover;
     color: var(--branco);
 }
