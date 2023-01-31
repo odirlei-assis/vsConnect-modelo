@@ -7,11 +7,14 @@ function mostrarMenu() {
     // if (menu.style.left != "10px") {
     if (window.getComputedStyle(menu).left != "10px") {
         menu.style.left = "10px"
-        sombra.style.right = "-10vw";
-        menu_barras.classList.add("ativo");
+        sombra.style.right = "-10vw"
+        menu_barras.setAttribute("aria-expanded", "true")
+        menu_barras.setAttribute("aria-label", "fechar menu")
     } else {
         menu.style.left = "-300px"
         sombra.style.right = "110vw";
-        menu_barras.classList.remove("ativo");
+        menu_barras.setAttribute("aria-expanded", "false")
+        menu_barras.setAttribute("aria-label", "abrir menu")
     }
+    menu_barras.classList.toggle("ativo")
 }

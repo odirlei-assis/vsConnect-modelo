@@ -19,7 +19,13 @@
     <header>
         <div class="container header_conteudo">
             <!-- <a class="menu_barras" href="#"><img onclick="mostrarMenu()" src="../Imagens/Menu de barras.svg" alt=""></a> -->
-            <a class="menu_barras" id="menu_barras" onclick="mostrarMenu()"href="#"><div class="barras"></div></a>
+            <!-- Acessibilidade ARIA
+            aria-label = para indicar o que o elemento faz.
+            aria-expanded = atributo que salva o status do botão (expandido ou nao - true ou false).
+            aria-control = especifica qual elemento esta sendo controlado atraves do Id.
+            aria-haspopup = indica que o elemento tem um popup (true ou false).
+            -->
+            <a class="menu_barras" id="menu_barras" aria-label="abrir menu" aria-expanded="false" aria-controls="menu_links" aria-haspopup="true" onclick="mostrarMenu()"href="#"><div class="barras"></div></a>
             <img class="header_logo" src="../Imagens/Logo.svg" alt="">
             <nav>
                 <div id="menu_links" class="menu_links">
