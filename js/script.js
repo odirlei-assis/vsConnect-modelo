@@ -4,14 +4,6 @@ let menu_barras = document.getElementById("menu_barras");
 
 let body = document.getElementsByTagName("body")[0];
 
-addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
-        menu.style.display = "flex"
-    } else {
-        menu.style.display = "none"
-    }
-});
-
 function mostrarMenu() {
 
     // if (menu.style.left != "10px") {
