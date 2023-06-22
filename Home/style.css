@@ -24,21 +24,14 @@ body {
     position: fixed;
     top: 0;
     right: 110vW;
-    /* background-color: rgba(0,0,0,0.65); */
+    background-color: rgba(0,0,0,0.65);
 
-    /* background-color: rgb(0,0,0); */
-    background-image: linear-gradient(to right, rgba(0,0,0,0.65) 90%, rgba(0,0,0,0) 100%);
-    
     width: 130vw;
     height: 100vh;
-    /* display: none; */
     z-index: 1;
     overflow: hidden;
     transition: .5s;
-
-    /* mask-image: linear-gradient(#00000080, #00000000); */
-    /* -webkit-mask-image: linear-gradient(#00000080, #00000008); */
-    /* backdrop-filter: blur(10px); */
+    backdrop-filter: blur(10px);
 }
 
 .container {
@@ -151,18 +144,19 @@ header {
     transform: rotate(135deg);
 }
 
-.ativo .barras::before{
-    /* transform: rotate(90deg); */
-    top: 0;
-}
-
 .ativo .barras::after{
     transform: rotate(-270deg);
     top: 0;
 }
 
+.ativo .barras::before{
+    /* transform: rotate(90deg); */
+    top: 0;
+}
+
 .header_logo {
-    width: 220px;
+    width: 50%;
+    max-width: 220px;
 }
 
 header nav {
@@ -195,6 +189,10 @@ header nav>a {
     font-family: var(--font1);
 }
 
+header nav>svg{
+    display: none;
+}
+
 
 
 
@@ -212,9 +210,8 @@ header nav>a {
 }
 
 .banner_conteudo {
-    min-width: 650px;
-    max-width: 800px;
-    width: 50%;
+    max-width: 700px;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -229,18 +226,18 @@ header nav>a {
 }
 
 .banner_slogan_l1 {
-    font-size: 58px;
+    font-size: 3.625em;
     font-family: var(--font1);
 }
 
 .banner_slogan_l2 {
-    font-size: 24px;
+    font-size: 1.5em;
     max-width: 550px;
-    margin: 50px;
+    margin: 50px 0;
 }
 
 .banner_slogan_l3 {
-    font-size: 22px;
+    font-size: 1.375em;
     text-decoration: underline;
     font-weight: 200;
 }
@@ -259,7 +256,7 @@ header nav>a {
 }
 
 .banner_botao_cli {
-    padding: 14px 80px;
+    padding: 14px 73px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), linear-gradient(92.23deg, #FF398F -25.96%, #17BBFF 126.83%);
 }
 
@@ -270,7 +267,8 @@ header nav>a {
 /* PARA CLIENTES */
 .span_cliente {
     background-color: var(--azul);
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: 120px;
     border: 1px solid #FFFFFF;
     box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.5);
@@ -305,9 +303,11 @@ header nav>a {
     width: 100%;
 }
 
+.para_devs img,
 .clientes_conteudo img {
     max-width: 550px;
     width: 50%;
+    object-fit: contain;
 }
 
 .clientes_texto {
@@ -350,17 +350,16 @@ header nav>a {
     padding: 100px 0;
 }
 
-.para_devs img {
-    max-width: 550px;
-    width: 50%;
-}
-
 .devs_texto {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; */
     padding: 100px 0;
     font-family: var(--font2);
+}
+
+main ul{
+    margin: 50px 0 50px 25px;
 }
 
 .clientes_botao_devs {
@@ -394,17 +393,19 @@ header nav>a {
 .card {
     font-family: 'Comic Sans MS', 'Comic Sans', cursive;
     font-style: italic;
-    width: 430px;
+    width: 48%;
+    max-width: 430px;
     height: 380px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     position: relative;
-    padding: 80px 50px 50px 50px;
+    padding: 80px 5% 50px 5%;
     color: var(--branco);
     background-color: var(--azulC);
     box-shadow: 0px 10px 15px #000000;
+    text-align: center;
 }
 
 .card img {
@@ -430,7 +431,9 @@ header nav>a {
 
 /* FOOTER */
 footer {
-    background-image: url("../img/background_footer.png");
+    background-image: 
+        linear-gradient( #06082170, #06082170),
+        url("../img/background_footer.png");
     background-size: cover;
     color: var(--branco);
 }
@@ -443,7 +446,8 @@ footer {
 }
 
 .span_dicas {
-    width: 860px;
+    width: 100%;
+    max-width: 860px;
     height: 300px;
     background: rgba(255, 255, 255, 0.01);
     border: 1px solid #FFFFFF;
@@ -461,7 +465,9 @@ footer {
     position: absolute;
     top: -100px;
     left: 70px;
-    width: 300px;
+    width: 40%;
+    max-width: 300px;
+    /* width: 300px; */
 }
 
 .span_dicas_texto {
@@ -499,6 +505,8 @@ footer {
 
 .rodape_conteudo>img {
     width: 40%;
+    max-width: 400px;
+    min-width: 250px;
 }
 
 .rodape_conteudo_paginas ul {
@@ -537,8 +545,13 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    /* HEADER */
     .menu_barras {
         display: initial;
+    }
+
+    .header_logo{
+        /* margin-left: 55px; */
     }
 
     .menu_links {
@@ -570,4 +583,132 @@ footer {
         /* justify-content: flex-end; */
         width: auto;
     }
+
+    header nav>a{
+        display: none;
+    }
+
+    header nav>svg{
+        display: flex;
+        width: 35px;
+        fill: var(--branco);
+    }
+
+    /* BANNER */
+    .banner_conteudo{
+        font-size: 14px;
+        max-width: 500px;
+    }
+
+    .banner_slogan_l2{
+        margin: 30px;
+    }
+
+    .banner_botoes{
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .banner_botoes a{
+        align-self: center;
+    }
+
+
+    .span_dicas img,
+    .para_devs img,
+    .clientes_conteudo img{
+        display: none;
+    }
+
+    .clientes_texto,
+    .devs_texto{
+        text-align: center;
+    }
+
+    .para_devs{
+        padding: 0;
+    }
+
+    main ul {
+        text-align: initial;
+    }
+
+    /* SERVICOS */
+    .servicos_cards{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .card2{
+        margin-top: 100px;
+    }
+
+    /* FOOTER */
+    .span_dicas_texto{
+        width: 90%;
+        text-align: center;
+    }
+
+    .rodape_conteudo{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rodape_conteudo_contatos{
+        align-items: center;
+        margin: 50px 0;
+    }
+
+    .rodape_conteudo>img{
+        order: -1;
+    }
+
+    .rodape_conteudo_paginas{
+        order: 1;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .banner_conteudo {
+        font-size: 13px;
+    }
+    
+    .span_cliente{
+        font-size: 18px;
+    }
+
+    h2{
+        font-size: 22px;
+    }
+
+    main ul {
+        margin: 40px 0;
+    }
+
+    main ul li {
+        font-size: 17px;
+    }
+
+    .botao {
+        font-size: 16px;
+    }
+    
+    .clientes_botao_cli{
+        padding: 12px 40px;   
+    }
+    
+    .clientes_botao_devs{
+        padding: 9px 40px;   
+    }
+
+    .span_dicas_texto {
+        font-size: 18px;
+    }
+
+
 }
