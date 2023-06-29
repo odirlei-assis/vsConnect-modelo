@@ -22,3 +22,16 @@ function mostrarMenu() {
     }
     menu_barras.classList.toggle("ativo")
 }
+
+//Funçao para colocar mascara no input de CEP
+function pegarValorInput(event) {
+    let input = event.target
+    input.value = mascaraCep(input.value)
+}
+
+function mascaraCep(value){
+    if (!value) return ""
+    value = value.replace(/\D/g, '')
+    value = value.replace(/(\d{5})(\d)/, '$1-$2')
+    return value
+}
