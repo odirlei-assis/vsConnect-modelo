@@ -171,23 +171,23 @@ header nav a {
 
 
 /* MAIN */
-main {
+.main_cadastro {
     background-image:
         linear-gradient(180deg, #060821 0%, #06082120 25%, #0608218f 80%, #060821 100%),
         url("../img/background_login.png");
     min-height: calc(100vh - 339px);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
 }
 
-.container_cad {
+.main_cadastro .container_cad {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.cad_conteudo {
+.main_cadastro .cad_conteudo {
     background: linear-gradient(114.61deg, #ffffff0d 1.08%, #ffffff1e 99.26%);
     box-shadow: 30px 30px 60px #00000080;
     border: 1px solid #ffffffcc;
@@ -200,16 +200,16 @@ main {
     align-items: center;
     padding: 50px 0;
     color: var(--branco);
-    margin-top: 6vh;
+    margin: 100px 0;
 }
 
-h1 {
+.main_cadastro h1 {
     font-family: var(--font1);
     font-size: 50px;
     text-align: center;
 }
 
-hr {
+.main_cadastro hr {
     margin: 20px auto;
     width: 80%;
     height: 4px;
@@ -218,38 +218,38 @@ hr {
     border-radius: 50%;
 }
 
-.cad_linha_checkbox {
+.main_cadastro .cad_linha_checkbox {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin: 20px 0;
 }
 
-.cad_container_checkbox{
+.main_cadastro .cad_container_checkbox{
     width: 43px;
     position: relative;
 }
 
-.cad_box_checkbox {
+.main_cadastro .cad_box_checkbox {
     width: 100%;
     height: 24px;
     background-color: #ffffff20;
     border: 2px solid #e6a3ff;
     border-radius: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .cad_checkbox:checked ~ .cad_box_checkbox{
 
 }
 
-.cad_checkbox {
+.main_cadastro .cad_checkbox {
     display: none;
     /* position: absolute;
     left: -100vw; */
 }
 
-.cad_label {
+.main_cadastro .cad_label {
     width: 20px;
     height: 20px;
     display: block;
@@ -261,20 +261,20 @@ hr {
     background-color: var(--azul);
     border-radius: 10px;
     box-shadow: none;
-    transition: .3s cubic-bezier(0.895, 0.07, 0.685, 0.68);
+    transition: cubic-bezier(0.895, 0.07, 0.685, 0.68);
 }
 
-.cad_checkbox:checked{
+.main_cadastro .cad_checkbox:checked{
     /* margin-bottom: 100px; */
 
 }
 
-.cad_checkbox:checked + .cad_label {
+.main_cadastro .cad_checkbox:checked + .cad_label {
     left: 21px;
     background-color: var(--rosa);
 }
 
-.cad_formulario {
+.main_cadastro .cad_formulario {
     width: 95%;
     max-width: 460px;
     display: flex;
@@ -282,41 +282,41 @@ hr {
     font-family: var(--font2);
 }
 
-.cad_linha1_input,
-.cad_linha2_input {
+.main_cadastro .cad_linha1_input,
+.main_cadastro .cad_linha2_input {
     display: flex;
     margin: 15px 0;
     justify-content: space-between;
     gap: 10%
 }
 
-.cad_linha1_input>div:nth-child(1),
-.cad_linha2_input>div:nth-child(2) {
+.main_cadastro .cad_linha1_input>div:nth-child(1),
+.main_cadastro .cad_linha2_input>div:nth-child(2) {
     flex: 1;
 }
 
-.cad_linha1_input>div:nth-child(2),
-.cad_linha2_input>div:nth-child(1) {
+.main_cadastro .cad_linha1_input>div:nth-child(2),
+.main_cadastro .cad_linha2_input>div:nth-child(1) {
     flex: 2;
 }
 
-.cad_box_input {
+.main_cadastro .cad_box_input {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 15px 0;
 }
 
-label {
+.main_cadastro label {
     font-size: 20px;
 }
 
-.cad_box_input2 > input,
-.cad_box_input > input {
+.main_cadastro .cad_box_input2 > input,
+.main_cadastro .cad_box_input > input {
     width: 100%;
     padding: 8px;
     border-radius: 20px;
-    border: 1px solid #909090;
+    border: 1px solid #b5b5b5;
     background: linear-gradient(136deg, #ffffff1a 0%, #ffffff0b 100%);
     box-shadow: 30px 30px 60px 0px #00000080;
     backdrop-filter: blur(15px);
@@ -324,35 +324,35 @@ label {
     font-size: 16px;
 }
 
-.cad_box_input2 > input:focus-visible,
-.cad_box_input > input:focus-visible {
+.main_cadastro .cad_box_input2 > input:focus-visible,
+.main_cadastro .cad_box_input > input:focus-visible {
     outline: 2px solid var(--rosa);
 }
 
 /* Cor de fundo do autocomplete */
-input:-webkit-autofill {
+.main_cadastro input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px #524569 inset;
 }
 
 /* Cor do texto do autocomplete */
-input:-webkit-autofill {
+.main_cadastro input:-webkit-autofill {
     -webkit-text-fill-color: var(--branco);
 }
 
-.cad_box_input2 > input::placeholder,
-.cad_box_input > input::placeholder {
+.main_cadastro .cad_box_input2 > input::placeholder,
+.main_cadastro .cad_box_input > input::placeholder {
     color: #ffffff80;
     font-size: 15px;
 }
 
-.cad_formulario > span{
+.main_cadastro .cad_formulario > span{
     font-family: var(--font1);
     font-size: 30px;
     text-align: center;
     margin-top: 30px;
 }
 
-.cad_hard_skill > span {
+.main_cadastro .cad_hard_skill > span {
     font-family: var(--font1);
     font-size: 1.875em;
     text-align: center;
@@ -360,33 +360,105 @@ input:-webkit-autofill {
 
 }
 
-.cad_uf {
+.main_cadastro .cad_uf {
     text-transform: uppercase;
 }
 
-.cad_hard_skill {
+.main_cadastro .cad_hard_skill {
     display: flex;
     flex-direction: column;
     position: relative;
-    right: 100px;
-    background-color: yellow;
-    height: 0;
-    font-size: 0;
-    width: 300px; 
-    /* display: none; */
+    right: 182px;
+    /* background-color: yellow; */
+    /* height: 0; */
+    /* font-size: 0; */
+    width: 460px; 
+    display: none;
     /* transition-delay: 1s;
     transition-property: height;
     transition-duration: 1s; */
-    transition: .3s height cubic-bezier(0.895, 0.07, 0.685, 0.68);
+    /* transition: .3s height cubic-bezier(0.895, 0.07, 0.685, 0.68); */
 }
 
-.cad_checkbox:checked ~ .cad_hard_skill {
-    height: 300px;
-    font-size: 16px;
-    /* display: flex; */
+.main_cadastro .cad_checkbox:checked ~ .cad_hard_skill {
+    /* transition-delay: 1S; */
+    /* height: 300px; */
+    /* font-size: 16px; */
+    display: flex;
 }
 
-.cad_botao {
+.main_cadastro .cad_linha_select{
+    display: flex;
+    gap: 10%;
+}
+
+.main_cadastro #cad_select_skill{
+    flex: 2;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #b5b5b5;
+    background: linear-gradient(136deg, #ffffff1a 0%, #ffffff0b 100%);
+    box-shadow: 30px 30px 60px 0px #00000090;
+    backdrop-filter: blur(15px);
+    color: #ffffffaa;
+    font-size:  16px;
+}
+
+.main_cadastro #cad_select_skill option{
+    /* appearance: none; */
+    background-color: #454158;
+    /* background: linear-gradient(136deg, #ffffff1a 0%, #ffffff0b 100%); */
+}
+
+.main_cadastro #cad_btn_inserir{
+    flex: .8;
+    font-size:  18px;
+    color: var(--branco);
+    border: 4px solid var(--rosa);
+    /* padding: 4px 30px; */
+    border-radius: 30%;
+    font-family: var(--font1);
+    background-color: #ffffff20;
+    min-width: 90px;
+}
+
+.main_cadastro #cad_lista_skills{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.main_cadastro .cad_item_skill{
+    border: 1px solid #b5b5b5;
+    background: linear-gradient(136deg, #ffffff1a 0%, #ffffff0b 100%);
+    box-shadow: 30px 30px 60px 0px #00000080;
+    backdrop-filter: blur(15px);
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.main_cadastro .cad_item_excluir{
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.main_cadastro .cad_item_excluir:hover{
+    scale: 1.1;
+    filter:drop-shadow(0 0 2px var(--branco));
+}
+
+.main_cadastro .cad_item_excluir svg{
+    fill: var(--rosa);
+    height: 16px;
+}
+
+.main_cadastro .cad_botao {
     align-self: center;
     font-family: var(--font1);
     color: var(--branco);
@@ -549,4 +621,16 @@ footer {
     }
 }
 
-@media screen and (max-width: 500px) {}
+@media screen and (max-width: 600px) {
+    .main_cadastro .cad_hard_skill {
+        width: 345px;
+        right: 125px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .main_cadastro .cad_hard_skill {
+        width: 260px;
+        right: 80px;
+    }
+}
