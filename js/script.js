@@ -27,18 +27,31 @@ function mostrarMenu() {
 
 
 //Funçao para colocar mascara no input de CEP
-function pegarValorInput(event) {
-    let input = event.target; // Obtém o elemento de entrada (input) que acionou o evento
-    input.value = mascaraCep(input.value); // Chama a função "mascaraCep" passando o valor do input e atualiza o valor do input com o valor mascarado
+function mascaraCep(event) {
+    let valorDigitado = event.target.value; // Obtém o valor do elemento que acionou o evento, neste caso o valor digitado no input
+
+    if (!valorDigitado) return ""; // Se o valor for vazio, retorna uma string vazia
+
+    valorDigitado = valorDigitado.replace(/\D/g, ''); // Remove todos os caracteres não numéricos do valor (deixa apenas os dígitos)
+    valorDigitado = valorDigitado.replace(/(\d{5})(\d)/, '$1-$2'); // Aplica a máscara de CEP (formato XXXXX-XXX) ao valor
+
+    event.target.value = valorDigitado; // Atualiza o valor do input com o valor mascarado
 }
 
-function mascaraCep(value) {
-    if (!value) return ""; // Se o valor for vazio, retorna uma string vazia
-    
-    value = value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos do valor (deixa apenas os dígitos)
-    value = value.replace(/(\d{5})(\d)/, '$1-$2'); // Aplica a máscara de CEP (formato XXXXX-XXX) ao valor
-    
-    return value; // Retorna o valor mascarado
+
+
+
+
+//Colocar a mascara de valor em Real
+function mascaraValor(event) {
+    let valorDigitado = event.target.value; // Obtém o valor do elemento que acionou o evento, neste caso o valor digitado no input
+
+    valorDigitado = valorDigitado.replace(/\D/g, ''); // Remove todos os caracteres não numéricos do valor (deixa apenas os dígitos)
+    valorDigitado = (valorDigitado / 100).toFixed(2) + ""; // Divide o valorDigitado por 100, arredonda para duas casas decimais e converte em string
+    valorDigitado = valorDigitado.replace(".", ","); // Substitui o ponto decimal por vírgula
+    valorDigitado = valorDigitado.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,"); // Adiciona separadores de milhar e vírgula para valores acima de 1000
+    valorDigitado = valorDigitado.replace(/(\d)(\d{3}),/g, "$1.$2,"); // Adiciona separadores de milhar e vírgula para valores abaixo de 1000
+    event.target.value = `R$ ${valorDigitado}`; // Define o valor do elemento que disparou o evento como "R$ " seguido do valor formatado
 }
 
 
@@ -49,12 +62,12 @@ function mascaraCep(value) {
 let listaOpcoes = ["HTML", "CSS", "JavaScript"]; // Array contendo as opções para o select
 let select = document.getElementById("cad_select_skill"); // Obtém o elemento select pelo seu ID
 
-listaOpcoes.forEach(item =>{ // Lê o array de opções
+listaOpcoes.forEach(item => { // Lê o array de opções
     let option = document.createElement("option"); // Cria um elemento HTML option
 
     option.text = item; // Define o texto da opção como o valor atual do array
     option.value = item; // Define o valor da opção como o valor atual do array
-    
+
     select.appendChild(option); // Adiciona a opção ao elemento select
 });
 
@@ -77,7 +90,7 @@ botaoInserir.addEventListener("click", function () {
             skillsSelecionadas.push(valorSelecionado); // Adiciona a skill selecionada ao array de skills selecionadas
             select.value = ""; // Limpa o valor selecionado no elemento "select"
             renderizarItens(); // Renderiza novamente as skills na página
-        }else{
+        } else {
             alert("Selecione uma skill para adicionar"); // Exibe um alerta solicitando a seleção de alguma skill
         }
     }
@@ -114,9 +127,9 @@ function renderizarItens() {
     }
 
     divListaSkills.innerHTML = template; // Renderiza o template dentro da div
-    
-    renderizarItens(); // Chama a função para renderizar as skills inicialmente na página
+
 }
+renderizarItens(); // Chama a função para renderizar as skills inicialmente na página
 
 
 
@@ -124,17 +137,10 @@ function renderizarItens() {
 
 // Excluir itens do array
 function excluirSkill(skill) {
-    // Obter o valor do item para exclusão
-    // let valorItem = this.previousSibling.textContent;
 
-    // Encontrar o índice do item no array
-    let indiceItem = skillsSelecionadas.indexOf(skill);
+    let indiceItem = skillsSelecionadas.indexOf(skill); // Encontrar o índice do item no array
 
-    // Remover o item do array pelo índice
-    if (indiceItem !== -1) {
-        skillsSelecionadas.splice(indiceItem, 1);
-    }
+    skillsSelecionadas.splice(indiceItem, 1); // Remove o item do array pelo índice
 
-    // Renderizar novamente os itens
-    renderizarItens();
+    renderizarItens(); // Renderizar novamente os itens
 };
