@@ -274,10 +274,10 @@ hr {
 .campo-label button {
     width: 20%;
 
-    border: none;
-    border-radius: 30px;
+    border: 4px solid var(--rosa);
+    border-radius: 30%;
 
-    background-color: var(--rosa);
+    background-color: transparent;
     color: white;
     font-family: var(--font1);
     text-transform: uppercase;
